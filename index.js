@@ -32,7 +32,7 @@ app.get('/cart/addd', (req, res) => {
     quantity: quantity,
   };
   cart.push(product);
-  res.json(cart);
+  res.json({cart});
 });
 
 // Endpoint 2: Edit Quantity of an Item in the Cart
@@ -48,7 +48,7 @@ app.get('/cart/edit', (req, res) => {
   let productId = parseInt(req.query.productId);
   let quantity = parseInt(req.query.quantity);
   let result = updateQuantity(cart, productId, quantity);
-  res.json(result);
+  res.json({result});
 });
 
 // Endpoint 3: Delete an Item from the Cart
@@ -58,13 +58,13 @@ function deleteCart(cart, id) {
 app.get('/cart/delete', (req, res) => {
   let productId = parseInt(req.query.productId);
   cart = cart.filter((product) => deleteCart(product, productId));
-  res.json(cart);
+  res.json({cart});
 });
 
 // Endpoint 4: Read Items in the Cart
 app.get('/cart', (req, res) => {
   let cartItems = cart
-  res.json(cartItems);
+  res.json({cartItems});
 });
 
 // Endpoint 5: Calculate Total Quantity of Items in the Cart
