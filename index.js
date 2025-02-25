@@ -15,10 +15,10 @@ let cart = [
 ];
 
 // Endpoint 1: Add an Item to the Cart
-// function addToCart(product) {
-//   cart.push(product);
-//   return cart;
-// }
+function addToCart(product) {
+  cart.push(product);
+  return cart;
+}
 
 app.get('/cart/add', (req, res) => {
   let productId = parseInt(req.query.productId);
@@ -31,9 +31,8 @@ app.get('/cart/add', (req, res) => {
     price: price,
     quantity: quantity,
   };
-  let cartItmes = cart.push(product);
-  console.log(cartItmes)
-  res.json({cartItmes});
+ let cartItems = addToCart(product);
+  res.json({cartItems});
 });
 
 // Endpoint 2: Edit Quantity of an Item in the Cart
