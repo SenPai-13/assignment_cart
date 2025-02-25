@@ -6,6 +6,7 @@ const port = 3000;
 let cors = require('cors');
 
 app.use(cors());
+app.use(express.json());
 
 // BD 3.4 - Assignment Shopping Cart Operations
 let cart = [
