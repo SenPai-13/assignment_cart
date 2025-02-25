@@ -20,7 +20,7 @@ let cart = [
 //   return cart;
 // }
 
-app.get('/cart/addd', (req, res) => {
+app.get('/cart/add', (req, res) => {
   let productId = parseInt(req.query.productId);
   let name = req.query.name;
   let price = parseInt(req.query.price);
@@ -32,6 +32,7 @@ app.get('/cart/addd', (req, res) => {
     quantity: quantity,
   };
   let cartItmes = cart.push(product);
+  console.log(cartItmes)
   res.json({cartItmes});
 });
 
