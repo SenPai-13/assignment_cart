@@ -31,8 +31,8 @@ app.get('/cart/addd', (req, res) => {
     price: price,
     quantity: quantity,
   };
-  cart.push(product);
-  res.json({cart});
+  let cartItmes = cart.push(product);
+  res.json({cartItmes});
 });
 
 // Endpoint 2: Edit Quantity of an Item in the Cart
