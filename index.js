@@ -48,7 +48,7 @@ app.get('/cart/edit', (req, res) => {
   let productId = parseInt(req.query.productId);
   let quantity = parseInt(req.query.quantity);
   let result = updateQuantity(cart, productId, quantity);
-  res.json({result});
+  res.json(result);
 });
 
 // Endpoint 3: Delete an Item from the Cart
