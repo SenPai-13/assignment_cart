@@ -20,7 +20,7 @@ let cart = [
 //   return cart;
 // }
 
-app.get('/cart/add', (req, res) => {
+app.get('/cart/addd', (req, res) => {
   let productId = parseInt(req.query.productId);
   let name = req.query.name;
   let price = parseInt(req.query.price);
@@ -62,7 +62,7 @@ app.get('/cart/delete', (req, res) => {
 });
 
 // Endpoint 4: Read Items in the Cart
-app.get('/car', (req, res) => {
+app.get('/cart', (req, res) => {
   res.json({ cart: cart });
 });
 
