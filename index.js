@@ -63,7 +63,7 @@ app.get('/cart/delete', (req, res) => {
 
 // Endpoint 4: Read Items in the Cart
 app.get('/cart', (req, res) => {
-  res.json(cart);
+  res.json([]);
 });
 
 // Endpoint 5: Calculate Total Quantity of Items in the Cart
